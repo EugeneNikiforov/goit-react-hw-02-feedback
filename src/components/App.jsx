@@ -1,8 +1,11 @@
+// import StatisticsForm from './StatisticsForm/StatisticsForm';
+import { Statistics } from './Statistics/Statistics';
+
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -10,7 +13,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      {/* <StatisticsForm /> */}
+      <Statistics good={0} neutral={0} bad={0} total={0} positivePercentage={0} />
     </div>
   );
 };
