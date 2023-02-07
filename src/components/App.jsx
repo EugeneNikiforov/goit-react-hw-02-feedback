@@ -1,4 +1,3 @@
-// import StatisticsForm from './StatisticsForm/StatisticsForm';
 import { Statistics } from './Statistics/Statistics';
 
 export const App = () => {
