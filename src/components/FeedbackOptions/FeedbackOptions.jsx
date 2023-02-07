@@ -20,13 +20,3 @@ FeedbackOptions.propTypes = {
     handleIncrement: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired
   };
-
-{/* <button 
-    onClick={this.handleIncrementGood} 
-    className={styles.counterBtnGood}>Good</button>
-<button 
-    onClick={this.handleIncrementNeutral} 
-    className={styles.counterBtnGood}>Neutral</button>
-<button 
-    onClick={this.handleIncrementEvil}
-    className={styles.counterBtnGood}>Evil</button> */}

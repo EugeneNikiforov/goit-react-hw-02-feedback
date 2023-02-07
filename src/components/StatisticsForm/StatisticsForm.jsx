@@ -31,11 +31,11 @@ function StatisticsForm() {
   return (
     <div className={styles.counter}>
       <h2 className={styles.counterHeader}>Please leave feedback</h2>
-      <div className={styles.counterBtnList}>
+      {/* <div className={styles.counterBtnList}>
         <button onClick={() => (onClickGood(), countTotalFeedback(), countPositiveFeedbackPercentage())} className={styles.counterBtnGood}>Good</button>
         <button onClick={() => (onClickNeutral(), countTotalFeedback(), countPositiveFeedbackPercentage())} className={styles.counterBtnNeutral}>Neutral</button>
         <button onClick={() => (onClickBad(), countTotalFeedback(), countPositiveFeedbackPercentage())} className={styles.counterBtnEvil}>Evil</button>
-      </div>
+      </div> */}
       <h2 className={styles.counterHeader}>Statistics</h2>
       <ul className={styles.counterList}>
         <li className={styles.counterDigit}>Good: {Good}</li>
