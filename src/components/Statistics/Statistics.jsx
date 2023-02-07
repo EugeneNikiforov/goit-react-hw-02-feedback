@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Section from '../Section/Section';
+import Notification from '../Notification/Notification';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import styles from './Statistics.module.scss';
 
@@ -37,16 +39,22 @@ export class Statistics extends Component {
   render() {
   return (
     <div className={styles.counter}>
-      <h2 className={styles.counterHeader}>Please leave feedback</h2>
+      {/* <h2 className={styles.counterHeader}>Please leave feedback</h2> */}
+      <Section title="Please leave feedback">
         <FeedbackOptions options={['good', 'neutral', 'bad']} handleIncrement={this.handleIncrement} />
-      <h2 className={styles.counterHeader}>Statistics</h2>
-      <ul className={styles.counterList}>
-        <li className={styles.counterDigit}>Good: {this.state.good}</li>
-        <li className={styles.counterDigit}>Neutral: {this.state.neutral}</li>
-        <li className={styles.counterDigit}>Bad: {this.state.bad}</li>
-        <li className={styles.counterDigit}>Total: {this.countTotalFeedback()}</li>
-        <li className={styles.counterDigit}>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
-      </ul>
+      </Section>
+      {/* <h2 className={styles.counterHeader}>Statistics</h2> */}
+      <Section title="Statistics">
+        <Notification message="There is no feedback" countTotalFeedback={this.countTotalFeedback()}>
+          <ul className={styles.counterList}>
+            <li className={styles.counterDigit}>Good: {this.state.good}</li>
+            <li className={styles.counterDigit}>Neutral: {this.state.neutral}</li>
+            <li className={styles.counterDigit}>Bad: {this.state.bad}</li>
+            <li className={styles.counterDigit}>Total: {this.countTotalFeedback()}</li>
+            <li className={styles.counterDigit}>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
+          </ul>
+        </Notification>
+      </Section>
     </div>
   )
 }

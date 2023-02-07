@@ -13,9 +13,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      
-      {/* <StatisticsForm /> */}
-      <Statistics />
+        <Statistics />
+    {/* <StatisticsForm /> */}
     </div>
   );
 };
