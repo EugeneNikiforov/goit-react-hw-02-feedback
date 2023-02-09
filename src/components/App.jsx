@@ -13,7 +13,6 @@ export const App = () => {
       }}
     >
         <Statistics />
-    {/* <StatisticsForm /> */}
     </div>
   );
 };

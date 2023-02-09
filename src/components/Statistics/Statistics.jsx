@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Section from '../Section/Section';
 import Notification from '../Notification/Notification';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
@@ -45,23 +44,26 @@ export class Statistics extends Component {
       </Section>
       {/* <h2 className={styles.counterHeader}>Statistics</h2> */}
       <Section title="Statistics">
-        <Notification message="There is no feedback" countTotalFeedback={this.countTotalFeedback()}>
-          <ul className={styles.counterList}>
+        {this.countTotalFeedback() ? (
+        <ul className={styles.counterList}>
             <li className={styles.counterDigit}>Good: {this.state.good}</li>
             <li className={styles.counterDigit}>Neutral: {this.state.neutral}</li>
             <li className={styles.counterDigit}>Bad: {this.state.bad}</li>
             <li className={styles.counterDigit}>Total: {this.countTotalFeedback()}</li>
             <li className={styles.counterDigit}>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
           </ul>
-        </Notification>
+        ) : (<Notification message="There is no feedback" />)}
       </Section>
     </div>
   )
 }
 };
-
-Statistics.propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number
-  };
+/* <Notification message="There is no feedback" countTotalFeedback={this.countTotalFeedback()}>
+  <ul className={styles.counterList}>
+    <li className={styles.counterDigit}>Good: {this.state.good}</li>
+    <li className={styles.counterDigit}>Neutral: {this.state.neutral}</li>
+    <li className={styles.counterDigit}>Bad: {this.state.bad}</li>
+    <li className={styles.counterDigit}>Total: {this.countTotalFeedback()}</li>
+    <li className={styles.counterDigit}>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
+  </ul>
+</Notification> */
